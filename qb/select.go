@@ -281,3 +281,16 @@ func (b *SelectBuilder) Sum(column string) *SelectBuilder {
 func (b *SelectBuilder) fn(name, column string) {
 	b.Columns(name + "(" + column + ")")
 }
+
+// @custom method
+// Select returns a new SelectBuilder without the given table name.
+func SelectBuild() *SelectBuilder {
+	return &SelectBuilder{}
+}
+
+// @custom method
+// Table set keyspace and table name
+func (b *SelectBuilder) Table(table string) *SelectBuilder {
+	b.table = table
+	return b
+}

@@ -124,3 +124,16 @@ func (b *DeleteBuilder) Existing() *DeleteBuilder {
 	b.exists = true
 	return b
 }
+
+// @custom method
+// DeleteBuild returns a new DeleteBuilder without the given table name.
+func DeleteBuild() *DeleteBuilder {
+	return &DeleteBuilder{}
+}
+
+// @custom method
+// Table set keyspace and table name
+func (b *DeleteBuilder) Table(table string) *DeleteBuilder {
+	b.table = table
+	return b
+}

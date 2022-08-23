@@ -262,3 +262,9 @@ func (b *UpdateBuilder) Existing() *UpdateBuilder {
 	b.exists = true
 	return b
 }
+
+// @custom method
+// UpdateBuild returns a new UpdateBuilder without the given table name.
+func UpdateBuild() *UpdateBuilder {
+	return &UpdateBuilder{}
+}

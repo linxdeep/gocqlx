@@ -196,3 +196,16 @@ func (b *InsertBuilder) TimeoutNamed(name string) *InsertBuilder {
 	b.using.TimeoutNamed(name)
 	return b
 }
+
+// @custom method
+// InsertBuild returns a new InsertBuilder without the given table name.
+func InsertBuild() *InsertBuilder {
+	return &InsertBuilder{}
+}
+
+// @custom method
+// Table set keyspace and table name
+func (b *InsertBuilder) Table(table string) *InsertBuilder {
+	b.table = table
+	return b
+}
